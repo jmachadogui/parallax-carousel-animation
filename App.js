@@ -49,35 +49,48 @@ export default function App() {
               style={{
                 width,
                 justifyContent:'center',
-                alignItems:'center'
+                alignItems:'center',
               }}
             >
               <View style={{
-                width: ITEM_WIDTH,
-                height: ITEM_HEIGHT,
-                overflow: 'hidden',
-                alignItems:'center',
-                borderRadius: 18,
-                borderWidth: 10,
-                borderColor: 'white',
-                shadowColor: '#000',
-                shadowRadius: 20,
-                shadowOpacity: 1,
-                elevation: 3
+                position: 'absolute'
               }}>
+                <View style={{
+                  width: ITEM_WIDTH,
+                  height: ITEM_HEIGHT,
+                  overflow: 'hidden',
+                  alignItems:'center',
+                  borderRadius: 18,
+                  borderWidth: 10,
+                  borderColor: 'white',
+                  shadowColor: '#000',
+                  shadowRadius: 20,
+                  shadowOpacity: 1,
+                  elevation: 15,
+                }}>
+                  <Image 
+                    source={{uri: item.photo}}
+                    style={{
+                      width: ITEM_WIDTH*1.4,
+                      height: ITEM_HEIGHT,
+                      resizeMode: 'cover',
+                    }}
+                  />
+                </View>
                 <Image 
-                  source={{uri: item.photo}}
+                  source={{uri: item.avatar_url}}
                   style={{
-                    width: ITEM_WIDTH*1.4,
-                    height: ITEM_HEIGHT,
-                    resizeMode: 'cover'
+                    width: 60,
+                    height:60, 
+                    borderRadius: 60,
+                    borderWidth: 2,
+                    borderColor: 'white',
+                    position: 'absolute',
+                    bottom: -30,
+                    right: 30
                   }}
                 />
               </View>
-              <Image 
-                source={{uri: item.avatar_url}}
-                style={{width: 60, height:60, borderRadius: 60}}
-              />
             </View>
           )
         }}
